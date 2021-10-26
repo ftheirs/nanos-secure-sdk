@@ -754,6 +754,7 @@ idx_ok:
 
       // Text display
       if (context && context_length) {
+#ifdef HAVE_BAGL_ELLIPSIS
         unsigned int pos = 0;
         unsigned int fgcolor = component->fgcolor;
         unsigned int bgcolor = component->bgcolor;
@@ -774,7 +775,7 @@ idx_ok:
                                context,
                                ellipsis_1_len,
                                context_encoding);
-#ifdef HAVE_BAGL_ELLIPSIS
+//#ifdef HAVE_BAGL_ELLIPSIS
         if (ellipsis_2_start) {
           // draw ellipsis
           pos = bagl_draw_string(component->font_id,
